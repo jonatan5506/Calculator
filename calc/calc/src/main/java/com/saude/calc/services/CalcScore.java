@@ -4,7 +4,9 @@ public class CalcScore {
     
     private int score= 0;
 
-    public CalcScore() {}
+    public CalcScore() {
+        
+    }
    
     public void countScore(String param) {
 
