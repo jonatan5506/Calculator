@@ -1,4 +1,4 @@
-package com.saude.calc.services;
+package com.saude.calc.util;
 
 public enum ConstantesNumber {
     PI(3.14159);

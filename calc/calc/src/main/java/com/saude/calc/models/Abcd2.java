@@ -11,6 +11,7 @@ public class Abcd2 {
     private Integer duration;
     private Integer score;
     private String age;
+    private String diabetes;
     private String bloodPressure;
     private String clinicalDiscourse;
     private String clinicalWeakness;
