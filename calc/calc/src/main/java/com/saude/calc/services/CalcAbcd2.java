@@ -7,11 +7,10 @@ public class CalcAbcd2 {
 
     public String Abcd2(Abcd2 abcd){
 
-
         CalcScore score = new CalcScore();
         score.countScore(abcd.getAge(), abcd.getBloodPressure(), abcd.getDiabetes());
         int resultScore = score.getScore();
-        String resultFormat = "";
+        String resultFormat = "";//Iniciei sem valor para não dar erro.
 
         //ClinicalDiscourse && ClinicalWeakness
         if (abcd.getClinicalDiscourse().equalsIgnoreCase("S") && abcd.getClinicalWeakness().equalsIgnoreCase("N")) {
