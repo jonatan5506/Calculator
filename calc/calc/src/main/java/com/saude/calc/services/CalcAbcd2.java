@@ -42,7 +42,7 @@ public class CalcAbcd2 {
             resultFormat = "Escore = " + resultScore + "\n" + "Baixo Risco.";
         }
         else if (resultScore > 3 && resultScore <= 5) {
-            resultFormat = "Escore = " + resultScore + "\n" + "Médio Risco.";
+            resultFormat = "Escore = " + resultScore + "\n" + "Risco Moderado.";
         }
         else {
             resultFormat = "Escore = " + resultScore + "\n" + "Alto Risco.";

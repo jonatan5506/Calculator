@@ -8,7 +8,7 @@ public class CalcAlvarado {
     public String Alvarado(Alvarado alvarado){
 
         CalcScore score = new CalcScore();
-        score.countScore(alvarado.getAnorexia(), alvarado.getNauseasVomito(), alvarado.getDormigratoria(), alvarado.getDefesaNoQid() + 1, alvarado.getDescompressapNoQid(), alvarado.getTemp(), alvarado.getLeuco() + 1, alvarado.getDevioAEsquerda());
+        score.countScore(alvarado.getAnorexia(), alvarado.getNauseasVomito(),   alvarado.getDormigratoria(), alvarado.getDefesaNoQid() + 1, alvarado.getDescompressapNoQid(), alvarado.getTemp(), alvarado.getLeuco() + 1, alvarado.getDevioAEsquerda());
         int resultScore = score.getScore();
         String resultFormat = "";
 
@@ -20,7 +20,7 @@ public class CalcAlvarado {
             resultFormat = "Escore = " + resultScore + "\n" + "Apendicite Provável";
         }
         else {
-            resultFormat = "Escore = " + resultScore + "\n" + "Apendicite  MUito Provável";
+            resultFormat = "Escore = " + resultScore + "\n" + "Apendicite  Muito Provável";
         }
 
         return resultFormat;
