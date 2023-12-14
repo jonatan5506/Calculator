@@ -3,6 +3,7 @@ package com.saude.calc.controller;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +21,7 @@ import com.saude.calc.services.CalcAnionGapSerico;
 import com.saude.calc.services.CalcAscDubois;
 
 @RestController
+@CrossOrigin("*")// Retira qualquer bloqueio para receber dados externos
 @RequestMapping("/calc")
 public class Controller {
   

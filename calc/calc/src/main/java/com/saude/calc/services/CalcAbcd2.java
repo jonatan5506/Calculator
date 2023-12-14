@@ -17,7 +17,7 @@ public class CalcAbcd2 {
             resultScore += 1;
         }
         else if (abcd.getClinicalDiscourse().equalsIgnoreCase("N") && abcd.getClinicalWeakness().equalsIgnoreCase("S")) {
-            resultScore += 1;
+            resultScore += 2;
         }
         else if (abcd.getClinicalDiscourse().equalsIgnoreCase("S") && abcd.getClinicalWeakness().equalsIgnoreCase("S")) {
             resultScore += 2;
@@ -25,7 +25,7 @@ public class CalcAbcd2 {
         else {
             resultScore += 0;
         }
-
+        
         //DURATION
         if (abcd.getDuration() < 10) {
             resultScore += 0;

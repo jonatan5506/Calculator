@@ -8,19 +8,38 @@ public class CalcAbcd3 {
     public String Abcd3(Abcd3 abcd) {
 
         CalcScore score = new CalcScore();
-        score.countScore(abcd.getAge(), abcd.getBloodPressure(), abcd.getDiabetes(), abcd.getDoubleAit() + 1,
-                abcd.getStenosis() + 1, abcd.getHyperintensity() + 1);
+        score.countScore(abcd.getAge(), abcd.getBloodPressure(), abcd.getDiabetes()/*, abcd.getDoubleAit() + 1,
+                abcd.getStenosis() + 1, abcd.getHyperintensity() + 1*/);
         int resultScore = score.getScore();
         String resultFormat = "";// iniciei sem valor para não dar erro.
 
-        // Clinical Features ***Não pode haver os dois casos juntos***
-        if (abcd.getImpairedSpeech().equalsIgnoreCase("S") && abcd.getUnilateralWeakness().equalsIgnoreCase("N")) {
+        //ClinicalDiscourse && ClinicalWeakness
+        if (abcd.getClinicalDiscourse().equalsIgnoreCase("S") && abcd.getClinicalWeakness().equalsIgnoreCase("N")) {
             resultScore += 1;
-        } else if (abcd.getImpairedSpeech().equalsIgnoreCase("N")
-                && abcd.getUnilateralWeakness().equalsIgnoreCase("S")) {
+        }
+        else if (abcd.getClinicalDiscourse().equalsIgnoreCase("N") && abcd.getClinicalWeakness().equalsIgnoreCase("S")) {
             resultScore += 2;
-        } else {
+        }
+        else if (abcd.getClinicalDiscourse().equalsIgnoreCase("S") && abcd.getClinicalWeakness().equalsIgnoreCase("S")) {
+            resultScore += 2;
+        }
+        else {
             resultScore += 0;
+        }
+
+        //doubleAit
+        if (abcd.getDoubleAit().equalsIgnoreCase("S")) {
+            resultScore += 2;
+        }
+
+        //stenosis
+        if (abcd.getStenosis().equalsIgnoreCase("S")) {
+            resultScore += 2;
+        }
+
+        //hyperintensity
+        if (abcd.getHyperintensity().equalsIgnoreCase("S")) {
+            resultScore += 2;
         }
 
         // DURATION
@@ -37,7 +56,7 @@ public class CalcAbcd3 {
             resultFormat = "Escore = " + resultScore + "\n" + "Baixo Risco de AVC";
         }
         else if (resultScore > 3 && resultScore <= 7) {
-            resultFormat = "Escore = " + resultScore + "\n" + "Médio Risco de AVC";
+            resultFormat = "Escore = " + resultScore + "\n" + "Risco Médio de AVC";
         }
         else {
             resultFormat = "Escore = " + resultScore + "\n" + "Alto Risco de AVC.";

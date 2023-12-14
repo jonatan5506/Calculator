@@ -14,12 +14,14 @@ public class CalcScore {
             if (param.equalsIgnoreCase(ConstantsText.SIM.getValor())) {
                 this.score += 1;
             }
-            else if (param.equalsIgnoreCase(ConstantsText.SIM.getValor() + 1)){
+            else if (param.equalsIgnoreCase(String.valueOf(Integer.parseInt(ConstantsText.SIM.getValor()) + 1))) {
                 this.score += 2;
+            }
+            else{
+                this.score += 0;
             }
         }
     }
-    
 
     public int getScore() {
         return score;

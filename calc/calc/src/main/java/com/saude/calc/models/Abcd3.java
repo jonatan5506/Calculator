@@ -12,6 +12,8 @@ public class Abcd3 {
     private String age;
     private String diabetes;
     private String bloodPressure;
+    private String clinicalDiscourse;
+    private String clinicalWeakness;
     private String unilateralWeakness;
     private String impairedSpeech;
     private String doubleAit;
