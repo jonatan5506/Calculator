@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.saude.calc.models.Abcd2;
 import com.saude.calc.models.AnionGapSerico;
+import com.saude.calc.models.Apgar;
 import com.saude.calc.models.AscDubois;
 import com.saude.calc.services.CalcAbcd2;
 import com.saude.calc.services.CalcAbcd3;
@@ -18,6 +19,7 @@ import com.saude.calc.services.CalcAlvarado;
 import com.saude.calc.models.Abcd3;
 import com.saude.calc.models.Alvarado;
 import com.saude.calc.services.CalcAnionGapSerico;
+import com.saude.calc.services.CalcApgar;
 import com.saude.calc.services.CalcAscDubois;
 
 @RestController
@@ -59,7 +61,7 @@ public class Controller {
 
   @PostMapping("/abcd3")
   @Transactional
-  public ResponseEntity<String> Abcd3(@RequestBody Abcd3 request){
+  public ResponseEntity<String> abcd3(@RequestBody Abcd3 request){
 
     CalcAbcd3 calc = new CalcAbcd3();
     String resultado = calc.Abcd3(request);
@@ -68,9 +70,18 @@ public class Controller {
 
   @PostMapping("/alvarado")
   @Transactional
-  public ResponseEntity<String> Alvarado(@RequestBody Alvarado request){
+  public ResponseEntity<String> alvarado(@RequestBody Alvarado request){
     CalcAlvarado calc = new CalcAlvarado();
     String resultado = calc.Alvarado(request);
     return new ResponseEntity<>(resultado, HttpStatus.OK);
   }
+  //TODO...
+  @PostMapping("/apgar")
+  @Transactional
+  public ResponseEntity<Integer> apgar(@RequestBody Apgar apgar) {
+    CalcApgar calcApgar = new CalcApgar();
+    Integer resultado = calcApgar.Apgar(apgar);
+    return new ResponseEntity<>(resultado, HttpStatus.OK);
 }
+}
+

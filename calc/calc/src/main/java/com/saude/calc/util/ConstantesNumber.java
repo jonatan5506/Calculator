@@ -11,5 +11,6 @@ public enum ConstantesNumber {
 
     public Double getValor() {
         return valor;
-    }
+    } 
+
 }
